@@ -2,59 +2,59 @@
 
 # 🚀 FastAPI REST Boilerplate
 
-**Template profissional de API REST com JWT, CRUD completo e Swagger**
+**A professional REST API template with JWT, full CRUD, and Swagger**
 
 [![Python](https://img.shields.io/badge/Python-3.11%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-005571?logo=fastapi)](https://fastapi.tiangolo.com/)
 [![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?logo=sqlalchemy&logoColor=white)](https://www.sqlalchemy.org/)
-[![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-orange)](https://github.com/LacerdaTraderCode/fastapi-rest-boilerplate/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-orange)](https://github.com/LacerdaTraderCode/fastapi-rest-boilerplate/blob/main/LICENSE)
 [![GitHub](https://img.shields.io/badge/GitHub-LacerdaTraderCode-181717?logo=github)](https://github.com/LacerdaTraderCode/fastapi-rest-boilerplate)
 
 </div>
 
 ---
 
-## 📌 Sobre o projeto
+## 📌 About the Project
 
-Template profissional de API REST em FastAPI, pronto para uso em produção. Inclui **autenticação JWT**, operações CRUD completas, banco de dados com SQLAlchemy, validação com Pydantic e documentação automática via Swagger — tudo estruturado de forma modular e escalável.
+A professional, production-ready REST API template built with FastAPI. Includes **JWT authentication**, full CRUD operations, a SQLAlchemy-backed database, Pydantic validation, and automatic Swagger documentation — all structured in a modular, scalable way.
 
-### Funcionalidades
+### Features
 
-- ✅ **Autenticação JWT** — registro, login e proteção de rotas
-- ✅ **CRUD completo** de usuários e itens
-- ✅ **SQLAlchemy ORM** com SQLite (trocável para PostgreSQL/MySQL)
-- ✅ **Validação automática** com Pydantic v2
-- ✅ **Hash seguro de senhas** com bcrypt
-- ✅ **Swagger UI** automático em `/docs`
-- ✅ **Estrutura modular** e escalável com routers
-- ✅ **CORS configurado** para integração com frontend
-
----
-
-## 🛠️ Tecnologias
-
-- **FastAPI** — Framework web moderno e performático
-- **SQLAlchemy** — ORM para banco de dados
-- **Pydantic** — Validação e serialização de dados
-- **python-jose** — Geração e validação de tokens JWT
-- **passlib + bcrypt** — Hash seguro de senhas
-- **Uvicorn** — Servidor ASGI
+- ✅ **JWT authentication** — registration, login, and route protection
+- ✅ **Full CRUD** for users and items
+- ✅ **SQLAlchemy ORM** with SQLite (swappable for PostgreSQL/MySQL)
+- ✅ **Automatic validation** with Pydantic v2
+- ✅ **Secure password hashing** with bcrypt
+- ✅ **Automatic Swagger UI** at `/docs`
+- ✅ **Modular, scalable structure** with routers
+- ✅ **CORS configured** for frontend integration
 
 ---
 
-## 📁 Estrutura
+## 🛠️ Technologies
+
+- **FastAPI** — Modern, high-performance web framework
+- **SQLAlchemy** — Database ORM
+- **Pydantic** — Data validation and serialization
+- **python-jose** — JWT token generation and validation
+- **passlib + bcrypt** — Secure password hashing
+- **Uvicorn** — ASGI server
+
+---
+
+## 📁 Structure
 
 ```
 fastapi-rest-boilerplate/
 ├── app/
-│   ├── main.py              # Ponto de entrada
-│   ├── database.py          # Configuração do banco
-│   ├── models.py            # Modelos SQLAlchemy
-│   ├── schemas.py           # Schemas Pydantic
-│   ├── auth.py              # Lógica JWT
+│   ├── main.py              # Entry point
+│   ├── database.py          # Database configuration
+│   ├── models.py            # SQLAlchemy models
+│   ├── schemas.py           # Pydantic schemas
+│   ├── auth.py              # JWT logic
 │   └── routers/
-│       ├── users.py         # Endpoints de usuários
-│       └── items.py         # Endpoints de itens (CRUD)
+│       ├── users.py         # User endpoints
+│       └── items.py         # Item endpoints (CRUD)
 ├── requirements.txt
 ├── .env.example
 └── README.md
@@ -62,7 +62,7 @@ fastapi-rest-boilerplate/
 
 ---
 
-## 📦 Instalação
+## 📦 Installation
 
 ```bash
 git clone https://github.com/LacerdaTraderCode/fastapi-rest-boilerplate.git
@@ -75,79 +75,79 @@ source venv/bin/activate      # Linux/Mac
 pip install -r requirements.txt
 
 cp .env.example .env
-# Edite .env e configure SECRET_KEY
+# Edit .env and set SECRET_KEY
 
 uvicorn app.main:app --reload
 ```
 
-Acesse **http://localhost:8000/docs** para a documentação interativa.
+Visit **http://localhost:8000/docs** for the interactive documentation.
 
 ---
 
 ## 📡 Endpoints
 
-### Autenticação
-| Método | Endpoint | Descrição |
+### Authentication
+| Method | Endpoint | Description |
 |--------|----------|-----------|
-| `POST` | `/auth/register` | Registrar novo usuário |
-| `POST` | `/auth/login` | Login — retorna token JWT |
+| `POST` | `/auth/register` | Register a new user |
+| `POST` | `/auth/login` | Login — returns a JWT token |
 
-### Usuários *(autenticado)*
-| Método | Endpoint | Descrição |
+### Users *(authenticated)*
+| Method | Endpoint | Description |
 |--------|----------|-----------|
-| `GET` | `/users/me` | Dados do usuário autenticado |
+| `GET` | `/users/me` | Authenticated user's data |
 
-### Itens *(autenticado)*
-| Método | Endpoint | Descrição |
+### Items *(authenticated)*
+| Method | Endpoint | Description |
 |--------|----------|-----------|
-| `GET` | `/items/` | Listar todos os itens |
-| `POST` | `/items/` | Criar novo item |
-| `GET` | `/items/{id}` | Obter item por ID |
-| `PUT` | `/items/{id}` | Atualizar item |
-| `DELETE` | `/items/{id}` | Deletar item |
+| `GET` | `/items/` | List all items |
+| `POST` | `/items/` | Create a new item |
+| `GET` | `/items/{id}` | Get item by ID |
+| `PUT` | `/items/{id}` | Update item |
+| `DELETE` | `/items/{id}` | Delete item |
 
 ---
 
-## ⚡ Exemplo de uso via cURL
+## ⚡ Usage Example via cURL
 
 ```bash
-# Registrar
+# Register
 curl -X POST "http://localhost:8000/auth/register" \
   -H "Content-Type: application/json" \
-  -d '{"email": "user@example.com", "password": "senha123"}'
+  -d '{"email": "user@example.com", "password": "password123"}'
 
 # Login
 curl -X POST "http://localhost:8000/auth/login" \
   -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "username=user@example.com&password=senha123"
+  -d "username=user@example.com&password=password123"
 
-# Usar token
+# Use token
 curl -X GET "http://localhost:8000/items/" \
-  -H "Authorization: Bearer SEU_TOKEN_AQUI"
+  -H "Authorization: Bearer YOUR_TOKEN_HERE"
 ```
 
 ---
 
 ## 🚀 Deploy
 
-Pronto para deploy em:
-- **Railway**, **Render**, **Fly.io** — gratuitos
+Ready for deployment on:
+- **Railway**, **Render**, **Fly.io** — free tiers
 - **AWS**, **Google Cloud**, **Azure**
-- **Docker** — adicionar Dockerfile conforme necessidade
+- **Docker** — add a Dockerfile as needed
 
 ---
 
-## ✅ Requisitos
+## ✅ Requirements
 
-- Python **3.11** ou superior
+- Python **3.11** or higher
 
 ---
 
-## 👤 Autor
+## 👤 Author
 
 <div align="center">
 
-**Wagner Lacerda** — Python Backend Developer | APIs REST • Automação • Data Engineering
+**Wagner Lacerda** — Senior Software Engineer | Python, Backend, AI Apps, Automation & Systems
 
 [![GitHub](https://img.shields.io/badge/GitHub-LacerdaTraderCode-181717?logo=github&logoColor=white)](https://github.com/LacerdaTraderCode)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Wagner%20Lacerda-0077B5?logo=linkedin&logoColor=white)](https://linkedin.com/in/wagner-lacerda-da-silva-958b9481)
@@ -155,12 +155,12 @@ Pronto para deploy em:
 [![Telegram](https://img.shields.io/badge/Telegram-LacerdaTraderCode-26A5E4?logo=telegram&logoColor=white)](https://t.me/LacerdaTraderCode)
 [![Telegram Bots](https://img.shields.io/badge/Telegram-Bots-26A5E4?logo=telegram&logoColor=white)](https://t.me/LacerdaTraderCode_bots)
 
-📍 Rio Grande do Sul, Brasil
+📍 Rio Grande do Sul, Brazil
 
 </div>
 
 ---
 
-## 📄 Licença
+## 📄 License
 
-Distribuído sob a licença MIT. Veja [LICENSE](LICENSE) para mais detalhes.
+Distributed under the MIT license. See [LICENSE](LICENSE) for more details.
