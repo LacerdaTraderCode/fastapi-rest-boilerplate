@@ -4,6 +4,7 @@
 
 **A professional REST API template with JWT, full CRUD, and Swagger**
 
+[![CI](https://github.com/LacerdaTraderCode/fastapi-rest-boilerplate/actions/workflows/ci.yml/badge.svg)](https://github.com/LacerdaTraderCode/fastapi-rest-boilerplate/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-005571?logo=fastapi)](https://fastapi.tiangolo.com/)
 [![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?logo=sqlalchemy&logoColor=white)](https://www.sqlalchemy.org/)
@@ -53,9 +54,13 @@ fastapi-rest-boilerplate/
 │   ├── schemas.py           # Pydantic schemas
 │   ├── auth.py              # JWT logic
 │   └── routers/
+│       ├── auth.py          # Registration and login
 │       ├── users.py         # User endpoints
 │       └── items.py         # Item endpoints (CRUD)
+├── tests/
+├── .github/workflows/ci.yml
 ├── requirements.txt
+├── requirements-dev.txt
 ├── .env.example
 └── README.md
 ```
@@ -125,6 +130,18 @@ curl -X POST "http://localhost:8000/auth/login" \
 curl -X GET "http://localhost:8000/items/" \
   -H "Authorization: Bearer YOUR_TOKEN_HERE"
 ```
+
+---
+
+## 🧪 Development
+
+```bash
+pip install -r requirements-dev.txt
+ruff check . && ruff format --check .
+pytest -v
+```
+
+Tests run against an isolated in-memory SQLite database. The same checks run on every push and pull request via GitHub Actions.
 
 ---
 

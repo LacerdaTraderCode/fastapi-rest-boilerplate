@@ -1,12 +1,8 @@
-"""
-Schemas Pydantic - Validação de dados de entrada e saída da API.
-"""
 from datetime import datetime
-from typing import Optional
-from pydantic import BaseModel, EmailStr, ConfigDict
+
+from pydantic import BaseModel, ConfigDict, EmailStr
 
 
-# ==================== USER SCHEMAS ====================
 class UserBase(BaseModel):
     email: EmailStr
 
@@ -23,20 +19,18 @@ class UserResponse(UserBase):
     model_config = ConfigDict(from_attributes=True)
 
 
-# ==================== TOKEN SCHEMAS ====================
 class Token(BaseModel):
     access_token: str
     token_type: str = "bearer"
 
 
 class TokenData(BaseModel):
-    email: Optional[str] = None
+    email: str | None = None
 
 
-# ==================== ITEM SCHEMAS ====================
 class ItemBase(BaseModel):
     title: str
-    description: Optional[str] = None
+    description: str | None = None
 
 
 class ItemCreate(ItemBase):
@@ -51,6 +45,6 @@ class ItemResponse(ItemBase):
     id: int
     owner_id: int
     created_at: datetime
-    updated_at: Optional[datetime] = None
+    updated_at: datetime | None = None
 
     model_config = ConfigDict(from_attributes=True)
