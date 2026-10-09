@@ -4,6 +4,7 @@
 
 **A professional REST API template with JWT, full CRUD, and Swagger**
 
+[![CI](https://github.com/LacerdaTraderCode/fastapi-rest-boilerplate/actions/workflows/ci.yml/badge.svg)](https://github.com/LacerdaTraderCode/fastapi-rest-boilerplate/actions/workflows/ci.yml)
 [![Python](https://img.shields.io/badge/Python-3.11%2B-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-005571?logo=fastapi)](https://fastapi.tiangolo.com/)
 [![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-D71F00?logo=sqlalchemy&logoColor=white)](https://www.sqlalchemy.org/)
