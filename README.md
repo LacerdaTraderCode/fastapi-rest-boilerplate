@@ -133,6 +133,18 @@ curl -X GET "http://localhost:8000/items/" \
 
 ---
 
+## 🧪 Development
+
+```bash
+pip install -r requirements-dev.txt
+ruff check . && ruff format --check .
+pytest -v
+```
+
+Tests run against an isolated in-memory SQLite database. The same checks run on every push and pull request via GitHub Actions.
+
+---
+
 ## 🚀 Deploy
 
 Ready for deployment on:
