@@ -54,9 +54,13 @@ fastapi-rest-boilerplate/
 │   ├── schemas.py           # Pydantic schemas
 │   ├── auth.py              # JWT logic
 │   └── routers/
+│       ├── auth.py          # Registration and login
 │       ├── users.py         # User endpoints
 │       └── items.py         # Item endpoints (CRUD)
+├── tests/
+├── .github/workflows/ci.yml
 ├── requirements.txt
+├── requirements-dev.txt
 ├── .env.example
 └── README.md
 ```
